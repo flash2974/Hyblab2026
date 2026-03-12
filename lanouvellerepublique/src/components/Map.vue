@@ -220,7 +220,7 @@ const onMapReady = (map) => {
     z-index: 500;
     display: grid;
     grid-template-columns: auto minmax(0, 560px) auto;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     gap: 0.65rem;
     transition: transform 0.4s ease-in-out;
