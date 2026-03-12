@@ -93,8 +93,8 @@ const zoom = ref(13)
 const isClicked = ref(false)
 
 const openDetail = (index) => {
-    focusRestaurant(index)
     isClicked.value = !isClicked.value
+    focusRestaurant(index)
 }
 let zoomControlInstance = null
 let scrollEndTimer = null
@@ -134,18 +134,19 @@ const centerMapToRestaurant = (index) => {
 const focusRestaurant = (index) => {
     const distance = Math.abs(index - selectedIndex.value)
     selectedIndex.value = index
-    isClicked.value = false
     scrollToRestaurant(index, distance <= 1)
     centerMapToRestaurant(index)
 }
 
 const goPrevious = () => {
     const nextIndex = (selectedIndex.value - 1 + restaurants.length) % restaurants.length
+    isClicked.value = false
     focusRestaurant(nextIndex)
 }
 
 const goNext = () => {
     const nextIndex = (selectedIndex.value + 1) % restaurants.length
+    isClicked.value = false
     focusRestaurant(nextIndex)
 }
 
@@ -214,7 +215,7 @@ const onMapReady = (map) => {
 .restaurant-carousel-wrapper {
     position: absolute;
     left: 0;
-    bottom: calc(4.2rem + 4.2rem + max(0.75rem, env(safe-area-inset-bottom)));
+    bottom: calc(max(0.75rem, env(safe-area-inset-bottom)));
     width: 100%;
     z-index: 500;
     display: grid;
@@ -252,8 +253,8 @@ const onMapReady = (map) => {
 .restaurant-carousel__slide {
     flex: 0 0 92%;
     scroll-snap-align: center;
-    display: flex;
-    align-items: center;
+    display: grid;
+    align-items: start;
     justify-content: center;
     cursor: pointer;
 }
@@ -261,19 +262,22 @@ const onMapReady = (map) => {
 .restaurant-carousel-wrapper--detail {
     position: absolute;
     left: 0;
-    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    bottom: calc(max(0.75rem, env(safe-area-inset-bottom)));
     width: 100%;
+    height: auto;
     z-index: 500;
     display: grid;
     grid-template-columns: auto minmax(0, 560px) auto;
     align-items: start;
     justify-content: center;
     gap: 0.65rem;
-
-    transform: translateY(-25%);
-    height: 100%;
+    transform: translateY(-100%);
     background-color: #ffffff;
     z-index: 1000;
+}
+
+.restaurant-carousel-wrapper--detail .carousel-nav {
+    visibility: hidden;
 }
 
 .restaurant-carousel__slide :deep(.mini-box) {
