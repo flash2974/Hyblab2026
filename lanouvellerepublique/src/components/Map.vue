@@ -25,16 +25,12 @@
             </l-map>
         </div>
 
-        <div :class="{ 'restaurant-carousel-wrapper--detail': isClicked }">
-            <button class="carousel-nav" type="button" @click="goPrevious">‹</button>
+        <div
+            class="restaurant-carousel-wrapper"
+            :class="{ 'restaurant-carousel-wrapper--detail': isClicked }"
+        >
+            <button class="carousel-nav" type="button" @click="goPrevious">&#8249;</button>
 
-            <div
-                ref="carouselRef"
-                class="restaurant-carousel"
-                @scroll.passive="syncSelectedIndexFromScroll"
-            >
-        </div>
-        <div class="restaurant-carousel-wrapper">
             <div ref="carouselRef" class="restaurant-carousel" @scroll.passive="onCarouselScroll">
                 <div
                     v-for="(r, index) in restaurants"
@@ -43,7 +39,7 @@
                     @click="focusRestaurant(index)"
                 >
                     <RestaurantMiniBox
-                        @click="openDetail(loopIndex)"
+                        @click="openDetail(index)"
                         :name="r.name"
                         :image="buildRestaurantImage(r.name)"
                         :latitude="r.latitude"
@@ -52,7 +48,7 @@
                         @focus-box="focusRestaurant(index)"
                     />
                     <RestaurantDetail
-                        v-if="isClicked && selectedIndex === loopIndex"
+                        v-if="isClicked && selectedIndex === index"
                         :name="r.name"
                         :image="buildRestaurantImage(r.name)"
                         :latitude="r.latitude"
@@ -60,6 +56,8 @@
                     />
                 </div>
             </div>
+
+            <button class="carousel-nav" type="button" @click="goNext">&#8250;</button>
         </div>
     </div>
 </template>
@@ -95,8 +93,8 @@ const zoom = ref(13)
 const isClicked = ref(false)
 
 const openDetail = (index) => {
-  isClicked.value = !isClicked.value
-  focusRestaurant(index)
+    isClicked.value = !isClicked.value
+    focusRestaurant(index)
 }
 let zoomControlInstance = null
 let scrollEndTimer = null
@@ -147,7 +145,7 @@ const goPrevious = () => {
 }
 
 const goNext = () => {
-    const nextIndex = (selectedIndex.value + 1) % restaurants.length;
+    const nextIndex = (selectedIndex.value + 1) % restaurants.length
     isClicked.value = false
     focusRestaurant(nextIndex)
 }
@@ -161,7 +159,6 @@ const syncSelectedIndexFromScroll = () => {
 
     scrollToRestaurant(selectedIndex.value, false, true)
 }
-
 
 const onCarouselScroll = () => {
     clearTimeout(scrollEndTimer)
@@ -210,8 +207,17 @@ const onMapReady = (map) => {
     width: 100%;
 }
 
+.map-canvas :deep(.leaflet-container) {
+    width: 100%;
+    height: 100%;
+}
+
 .restaurant-carousel-wrapper {
-    margin-top: 1rem;
+    position: absolute;
+    left: 0;
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    width: 100%;
+    z-index: 500;
     display: grid;
     grid-template-columns: auto minmax(0, 560px) auto;
     align-items: center;
@@ -230,17 +236,6 @@ const onMapReady = (map) => {
     font-size: 1.4rem;
     line-height: 1;
     cursor: pointer;
-.map-canvas :deep(.leaflet-container) {
-    width: 100%;
-    height: 100%;
-}
-
-.restaurant-carousel-wrapper {
-    position: absolute;
-    left: 0;
-    bottom: max(0.75rem, env(safe-area-inset-bottom));
-    width: 100%;
-    z-index: 500;
 }
 
 .restaurant-carousel {
@@ -281,10 +276,6 @@ const onMapReady = (map) => {
     z-index: 1000;
 }
 
-@media (max-width: 700px) {
-    .map-canvas {
-        height: 600px;
-    }
 .restaurant-carousel__slide :deep(.mini-box) {
     width: 100%;
     transition:
@@ -317,9 +308,12 @@ const onMapReady = (map) => {
 }
 
 @media (max-width: 700px) {
+    .map-canvas {
+        height: 600px;
+    }
+
     .restaurant-carousel-wrapper {
         width: 100%;
     }
-}
 }
 </style>
