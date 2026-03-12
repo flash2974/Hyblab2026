@@ -47,8 +47,6 @@ const bottomBtnFilterColor = COLORS.switchTextBlue
                 <img :src="decouvrirIcon" alt="" class="action-btn__icon" aria-hidden="true" />
             </button>
         </div>
-        <footer class="bottom-banner" :class="{ 'ui-blocked': showFiltres }">espace dédié pour le navigateur
-        </footer>
         <Filtres :show="showFiltres" @close="showFiltres = false" @apply="onFiltersApply" />
         </div>
 </template>
@@ -100,13 +98,13 @@ const bottomBtnFilterColor = COLORS.switchTextBlue
 
 .mini-nav a {
     display: inline-block;
-    padding: 0.25rem 1.2rem;
+    padding: 0.5rem 1.75rem;
     border-radius: 999px;
     text-decoration: none;
     background: v-bind(inactiveBg);
     color: v-bind(inactiveColor);
-    font-size: 0.8rem;
-    font-weight: 400;
+    font-size: 1.05rem;
+    font-weight: 600;
 }
 
 .mini-nav a.router-link-exact-active {
@@ -120,25 +118,6 @@ const bottomBtnFilterColor = COLORS.switchTextBlue
     }
 }
 
-.bottom-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1001;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 4.2rem;
-    text-align: center;
-    padding: 0 1rem;
-    background: #000;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-}
-
 .global-actions {
     position: fixed;
     left: 0;
@@ -149,7 +128,7 @@ const bottomBtnFilterColor = COLORS.switchTextBlue
     grid-template-columns: 125px 235px;
     justify-content: center;
     gap: 0.6rem;
-    padding: 0.75rem 1.4rem 1rem;
+    padding: 0.75rem 1.4rem calc(1rem + env(safe-area-inset-bottom));
     background: linear-gradient(
         180deg,
         rgba(255, 255, 255, 0) 0%,

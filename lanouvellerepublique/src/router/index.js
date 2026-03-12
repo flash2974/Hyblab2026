@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router' 
 import ListView from '../views/ListView.vue'
+import MapView from '../views/MapView.vue'
 import AxiosExample from '../views/AxiosExample.vue'
 
 const router = createRouter({
