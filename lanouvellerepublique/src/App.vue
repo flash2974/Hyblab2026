@@ -30,7 +30,6 @@ const bottomBtnBg = COLORS.white
 const bottomBtnColor = COLORS.pinkSwitch
 const bottomBtnFilterColor = COLORS.switchTextBlue
 
-const route = useRoute()
 const isCarteActive = computed(() => route.path === "/carte")
 </script>
 
