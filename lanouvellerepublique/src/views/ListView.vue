@@ -3,7 +3,7 @@ import { computed } from "vue"
 import { useRouter } from "vue-router"
 import ListItem from "@/components/List_item.vue"
 import IntroListe from "@/components/intro_liste.vue"
-import { COLORS } from "@/assets/Couleurs/Coulleurs.js"
+import { COLORS } from "@/assets/colors.js"
 import { useFilterStore } from "@/stores/filterStore"
 
 const filterStore = useFilterStore()

@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, computed } from "vue"
 import { RouterLink, RouterView, useRoute } from "vue-router"
-import { COLORS } from "@/assets/Couleurs/Coulleurs.js"
+import { COLORS } from "@/assets/colors.js"
 import reglageIcon from "@/assets/Icones/Reglage.svg"
 import decouvrirIcon from "@/assets/Icones/Decouvrir.svg"
 import Header from "@/components/Header.vue"
@@ -43,7 +43,10 @@ const isCarteActive = computed(() => route.path === "/carte")
         <div class="view-container">
             <RouterView />
         </div>
-        <div class="global-actions" :class="{ 'ui-blocked': showFiltres, 'global-actions--list': isListRoute }">
+        <div
+            class="global-actions"
+            :class="{ 'ui-blocked': showFiltres, 'global-actions--list': isListRoute }"
+        >
             <button type="button" class="action-btn action-btn--filter" @click="showFiltres = true">
                 <span>Filtrer</span>
                 <img :src="reglageIcon" alt="" class="action-btn__icon" aria-hidden="true" />
