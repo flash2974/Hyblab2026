@@ -12,7 +12,7 @@ export default [
         "date": "03/12/2025",
         "hook": "A deux pas de la place Plumereau, on a testé Yumi Ramen",
         "coupDeCoeur": true,
-        "image": "/lanouvellerepublique/img/resto ramen.jpg",
+        "image": "/img/resto ramen.jpg",
         "article": {
             "title": "A deux pas de la place Plumereau, on a testé Yumi Ramen",
             "catch_phrase": "A REMPLIR",
