@@ -151,19 +151,6 @@ const focusRestaurant = (index) => {
     centerMapToRestaurant(index)
 }
 
-const goPrevious = () => {
-    const nextIndex =
-        (selectedIndex.value - 1 + restaurants.value.length) % restaurants.value.length
-    isClicked.value = false
-    focusRestaurant(nextIndex)
-}
-
-const goNext = () => {
-    const nextIndex = (selectedIndex.value + 1) % restaurants.value.length
-    isClicked.value = false
-    focusRestaurant(nextIndex)
-}
-
 const syncSelectedIndexFromScroll = () => {
     const carousel = carouselRef.value
 
