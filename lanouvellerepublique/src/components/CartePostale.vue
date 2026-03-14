@@ -73,7 +73,7 @@ defineProps({
     gap: 8px; */
 
 
-    width: 398px;
+    width: 399px;
     height: 257.71px;
     padding: 6px;
     gap: 11.81px;
