@@ -17,7 +17,7 @@
                     v-for="(r, index) in restaurants"
                     :key="r.name"
                     :coords="[r.latitude, r.longitude]"
-                    :image="buildRestaurantImage(r.name)"
+                    :image="r.image"
                     :is-active="selectedIndex === index"
                     :restaurant-index="index"
                     @focus-marker="focusRestaurant"
@@ -29,8 +29,6 @@
             class="restaurant-carousel-wrapper"
             :class="{ 'restaurant-carousel-wrapper--detail': isClicked }"
         >
-            <button class="carousel-nav" type="button" @click="goPrevious">&#8249;</button>
-
             <div ref="carouselRef" class="restaurant-carousel" @scroll.passive="onCarouselScroll">
                 <div
                     v-for="(r, index) in restaurants"
@@ -39,25 +37,22 @@
                     @click="focusRestaurant(index)"
                 >
                     <RestaurantMiniBox
+                        v-if="!isClicked"
                         @click="openDetail(index)"
+                        :title="r.hook"
                         :name="r.name"
-                        :image="buildRestaurantImage(r.name)"
+                        :image="r.image"
                         :latitude="r.latitude"
                         :longitude="r.longitude"
                         :is-active="selectedIndex === index"
                         @focus-box="focusRestaurant(index)"
                     />
-                    <RestaurantDetail
+                    <RestaurantFullArticle
                         v-if="isClicked && selectedIndex === index"
-                        :name="r.name"
-                        :image="buildRestaurantImage(r.name)"
-                        :latitude="r.latitude"
-                        :longitude="r.longitude"
+                        :restaurant="r"
                     />
                 </div>
             </div>
-
-            <button class="carousel-nav" type="button" @click="goNext">&#8250;</button>
         </div>
     </div>
 </template>
@@ -65,15 +60,17 @@
 <script setup>
 import "leaflet/dist/leaflet.css"
 import { ref, watch, computed, onMounted } from "vue"
+import { useRoute } from "vue-router"
 import { control, divIcon } from "leaflet"
 import { LMap, LTileLayer, LMarker } from "@vue-leaflet/vue-leaflet"
 import MapMarker from "./MapMarker.vue"
 import RestaurantMiniBox from "./RestaurantMiniBox.vue"
-import RestaurantDetail from "./RestaurantDetail.vue"
+import RestaurantFullArticle from "./RestaurantFullArticle.vue"
 import { userCoords, requestGeolocation } from "@/stores/mapStore"
 import { useFilterStore } from "@/stores/filterStore"
 
 const filterStore = useFilterStore()
+const route = useRoute()
 const restaurants = computed(() => filterStore.filteredRestaurants)
 
 const API_KEY = "b4BxT11KjV5Zzm2lo2V1"
@@ -112,10 +109,7 @@ const stopWatch = watch(userCoords, (newCoords) => {
     }
 })
 
-const buildRestaurantImage = (restaurantName) =>
-    `https://picsum.photos/seed/${encodeURIComponent(restaurantName)}/96/96`
-
-const scrollToRestaurant = (index, smooth = true) => {
+const scrollToRestaurant = (index) => {
     const carousel = carouselRef.value
     if (!carousel) return
     const slide = carousel.children[index]
@@ -124,7 +118,7 @@ const scrollToRestaurant = (index, smooth = true) => {
 
     carousel.scrollTo({
         left,
-        behavior: smooth ? "smooth" : "instant",
+        behavior: "smooth",
     })
 }
 
@@ -132,7 +126,7 @@ const centerMapToRestaurant = (index) => {
     const list = restaurants.value
     if (!list.length) return
 
-    const map = mapRef.value.leafletObject
+    const map = mapRef.value?.leafletObject
     if (!map) return
 
     const restaurant = list[index]
@@ -149,33 +143,30 @@ const focusRestaurant = (index) => {
 
     if (index < 0 || index >= list.length) return
 
-    const distance = Math.abs(index - selectedIndex.value)
     selectedIndex.value = index
-    scrollToRestaurant(index, distance <= 1)
+    scrollToRestaurant(index)
     centerMapToRestaurant(index)
 }
 
-const goPrevious = () => {
-    const nextIndex =
-        (selectedIndex.value - 1 + restaurants.value.length) % restaurants.value.length
-    isClicked.value = false
-    focusRestaurant(nextIndex)
-}
-
-const goNext = () => {
-    const nextIndex = (selectedIndex.value + 1) % restaurants.value.length
-    isClicked.value = false
-    focusRestaurant(nextIndex)
-}
-
-const syncSelectedIndexFromScroll = () => {
-    const carousel = carouselRef.value
-
-    if (!carousel || carousel.clientWidth === 0) {
+const openRestaurantFromQuery = () => {
+    const key = route.query.restaurant
+    if (!key || !restaurants.value.length) {
         return
     }
 
-    scrollToRestaurant(selectedIndex.value, false, true)
+    const target = String(key)
+    const index = restaurants.value.findIndex(
+        (restaurant) =>
+            String(restaurant.id ?? "") === target ||
+            String(restaurant.name ?? "").toLowerCase() === target.toLowerCase(),
+    )
+
+    if (index < 0) {
+        return
+    }
+
+    focusRestaurant(index)
+    isClicked.value = route.query.detail === "1"
 }
 
 const onCarouselScroll = () => {
@@ -221,7 +212,17 @@ watch(restaurants, (list) => {
     if (selectedIndex.value >= list.length) {
         selectedIndex.value = list.length - 1
     }
+
+    openRestaurantFromQuery()
 })
+
+watch(
+    () => [route.query.restaurant, route.query.detail, route.query.pick],
+    () => {
+        openRestaurantFromQuery()
+    },
+    { immediate: true },
+)
 </script>
 
 <style scoped>
@@ -245,27 +246,16 @@ watch(restaurants, (list) => {
 .restaurant-carousel-wrapper {
     position: absolute;
     left: 0;
-    bottom: calc(max(0.75rem, env(safe-area-inset-bottom)));
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    bottom: 5rem;
     width: 100%;
     z-index: 500;
-    display: grid;
-    grid-template-columns: auto minmax(0, 560px) auto;
-    align-items: center;
+    display: block;
+    align-items: start;
     justify-content: center;
     gap: 0.65rem;
     transition: transform 0.4s ease-in-out;
-}
-
-.carousel-nav {
-    width: 34px;
-    height: 34px;
-    border-radius: 999px;
-    border: 1px solid #cbd5e1;
-    background: #ffffff;
-    color: #0f172a;
-    font-size: 1.4rem;
-    line-height: 1;
-    cursor: pointer;
 }
 
 .restaurant-carousel {
@@ -274,6 +264,8 @@ watch(restaurants, (list) => {
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     padding: 0.4rem 0;
+    gap: 16px;
+    z-index: 1000;
 }
 
 .restaurant-carousel::-webkit-scrollbar {
@@ -287,34 +279,34 @@ watch(restaurants, (list) => {
     align-items: start;
     justify-content: center;
     cursor: pointer;
+
+    width: 364px;
+    height: 240px;
+    border-radius: 12px;
+    padding: 16px;
+    gap: 10px;
+    background-color: #ffffff;
 }
 
 .restaurant-carousel-wrapper--detail {
     position: absolute;
-    left: 0;
     bottom: 0;
+    top: 5rem;
 
     width: 100%;
     height: 100%;
 
-    z-index: 1000;
+    z-index: 1003;
 
-    display: grid;
-    grid-template-columns: auto minmax(0, 560px) auto;
-    align-items: start;
+    display: block;
+    align-items: center;
     justify-content: center;
     gap: 0.65rem;
-
-    transform: translateY(0);
 
     background-color: #ffffff;
 
     overflow-y: auto;
     overflow-x: hidden;
-}
-
-.restaurant-carousel-wrapper--detail .carousel-nav {
-    visibility: hidden;
 }
 
 .restaurant-carousel__slide :deep(.mini-box) {

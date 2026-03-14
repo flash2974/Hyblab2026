@@ -1,69 +1,83 @@
 <template>
-    <div class="mini-box">
-        <div
-            class="mini-box-image-div"
-            :style="{ backgroundImage: `url('${displayImage}')` }"
-            :title="props.title"
-        >
-            <div class="badges-panel">
-                <span v-for="badge in props.badges" :key="badge" class="badge">
-                    {{ badge }}
-                </span>
-            </div>
-            <div class="mini-box-content">
-                <div class="div-title">
-                    <h3 class="title">{{ props.title }}</h3>
+    <div class="global">
+        <div class="carte-postale">
+            <div
+                class="carte-postale-image-div"
+                :style="{ backgroundImage: `url('${image}')` }"
+                :title="title"
+            >
+
+                <div class="badges-panel">
+                    <span v-for="badge in badges" :key="badge" class="badge">
+                        {{ badge }}
+                    </span>
+                </div>
+                <div class="carte-postale-content">
+                    <div class="div-title">
+                        <h3 class="title">{{ title }}</h3>
+                    </div>
                 </div>
             </div>
+            <slot />
         </div>
-        <slot />
+        <div class="retourner-carte">
+            <p>Retourner la carte</p>
+        </div>
     </div>
 </template>
 
 <script setup>
 
-import { computed } from "vue"
-
 const vectorBgUrl = `url('${import.meta.env.BASE_URL}img/Vector.png')`
 
-const props = defineProps({
+defineProps({
     title: {
         type: String,
-        default: "Item Title",
+        default: 'Item Title'
     },
     image: {
         type: String,
-        default: "",
+        default: ''
     },
     badges: {
         type: Array,
-        default: () => [],
+        default: () => []
     },
     date: {
         type: String,
-        default: "",
-    },
-})
-
-const displayImage = computed(() => {
-    if (!props.image) return ""
-    return encodeURI(String(props.image))
+        default: ''
+    }
 })
 </script>
 
 <style scoped>
-.mini-box {
-    position: relative;
-
+.global {
     display: flex;
-    height: 208px;
-    width: 332px;
-    padding: 6.25px;
-    gap: 6.25;
+    justify-content: center;
+    align-items: center;
+    width: 430px;
+    height: 286px;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+.carte-postale {
+    position: relative;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+
+    /* height: 400px;
+    padding: 8px;
+    gap: 8px; */
+
+
+    width: 399px;
+    height: 257.71px;
+    padding: 6px;
+    gap: 11.81px;
+
     align-self: stretch;
 
     border-radius: 12px;
@@ -74,16 +88,17 @@ const displayImage = computed(() => {
     background-repeat: no-repeat;
 }
 
-.mini-box-image-div {
+.carte-postale-image-div {
     display: flex;
-    padding: 8px;
+    padding: 16px;
+    /* padding: 8px; */
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     flex: 1 0 0;
     align-self: stretch;
-    width: 319.5px;
-    height: 195.5px;
+    width: 386px;
+    height: 245.71px;
 
     border-radius: 13.179px;
     background-color: #fffcf8;
@@ -92,7 +107,7 @@ const displayImage = computed(() => {
     background-repeat: no-repeat;
 }
 
-.mini-box-content {
+.carte-postale-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -106,7 +121,7 @@ const displayImage = computed(() => {
     width: 56.568px;
     height: 12.432px;
 
-    color: #377dd1;
+    color: #377DD1;
     font-family: Abordage;
     font-size: 9.946px;
     font-style: normal;
@@ -123,13 +138,13 @@ const displayImage = computed(() => {
     align-self: stretch;
 
     border-radius: 10px;
-    background: #fff;
+    background: #FFF;
 }
 
 .title {
     flex: 1 0 0;
 
-    color: #e815b2;
+    color: #E815B2;
     padding-top: 5px;
     font-family: Lalezar;
     font-size: 25px;
@@ -151,5 +166,28 @@ const displayImage = computed(() => {
     height: 70px;
     transform: rotate(10deg);
     flex-shrink: 0;
+}
+
+.retourner-carte {
+    display: flex;
+    justify-content: center;
+    width: 226px;
+    height: 40px;
+    border-radius: 30px;
+    padding-top: 11px;
+    padding-right: 40px;
+    padding-bottom: 11px;
+    padding-left: 40px;
+    gap: 5px;
+    background: #FDE8F7;
+}
+
+.retourner-carte p {
+    color: #E815B2;
+    font-family: Lalezar;
+    font-size: 14px;
+    font-style: Bold;
+    font-weight: 700;
+    line-height: 18px;
 }
 </style>
