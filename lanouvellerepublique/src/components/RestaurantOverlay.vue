@@ -26,8 +26,10 @@ defineProps({
 }
 
 .overlay-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
+  position: relative;
+    top: 16px;
+    right: 16px;
+    transform: translateX(15px) translateY(50px);
+    z-index: 10000;
 }
 </style>
