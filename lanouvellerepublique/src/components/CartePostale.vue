@@ -62,21 +62,22 @@ defineProps({
 }
 .carte-postale {
     position: relative;
-
     display: flex;
-    height: 400px;
-    padding: 8px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8px;
     flex-shrink: 0;
-    /*
+
+    /* height: 400px;
+    padding: 8px;
+    gap: 8px; */
+
+
     width: 398px;
     height: 257.71px;
     padding: 6px;
     gap: 11.81px;
-    */
+
     align-self: stretch;
 
     border-radius: 12px;
