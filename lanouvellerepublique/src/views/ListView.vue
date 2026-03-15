@@ -62,13 +62,13 @@ const openRestaurantDetail = async (restaurant) => {
 
 <style scoped>
 .list-view {
-    min-height: 100vh;
-    padding: 8.6rem 1.25rem 10rem;
-    background: v-bind(listBg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+  min-height: 100vh;
+  padding: 8.6rem 1.25rem 80px;
+  background: v-bind(listBg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .list-view > :deep(.list-item) {
