@@ -106,9 +106,8 @@ const loadSVG = (badge) => {
 const displayBadges = computed(() => {
     const selectedKeys = []
 
-    if (props.coupDeCoeur) {
-        selectedKeys.push("coeur_tmv")
-    }
+    if (props.coupDeCoeur) selectedKeys.push("coeur_tmv")
+    else selectedKeys.push(props.badges?.budget?.[0])
 
     const cuisineKey = props.badges?.cuisine_type?.[0]
     const ambianceKey = props.badges?.ambiance?.[0]
@@ -128,7 +127,10 @@ const displayImage = computed(() => {
 
 const rotateBadge = (index) => {
     const rotation = index % 2 === 0 ? "-10deg" : "10deg"
-    return `transform: rotate(${rotation})`
+    return {
+        transform: `rotate(${rotation})`,
+        zIndex: 100 - index,
+    }
 }
 </script>
 
@@ -234,11 +236,18 @@ const rotateBadge = (index) => {
     justify-content: flex-end;
     align-items: flex-start;
     gap: 0;
+    padding-right: 2px;
 }
 
 .badge {
     width: clamp(50px, 70px, 70px);
     height: clamp(50px, 70px, 70px);
+    display: block;
+    position: relative;
     flex-shrink: 0;
+}
+
+.badge + .badge {
+    margin-left: -18px;
 }
 </style>
