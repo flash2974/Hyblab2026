@@ -32,13 +32,16 @@ jobs:
               run: npm run build
               working-directory: lanouvellerepublique
 
+            - name: Prepare Pages artifact
+              run: mkdir -p pages/lanouvellerepublique && cp -R lanouvellerepublique/dist/. pages/lanouvellerepublique
+
             - name: Configure Pages
               uses: actions/configure-pages@v5
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
-                  path: ./lanouvellerepublique/dist
+                  path: ./pages
 
     deploy:
         needs: build

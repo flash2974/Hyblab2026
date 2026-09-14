@@ -8,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/lanouvellerepublique/',
+  base: '/Hyblab2026/lanouvellerepublique/',
   plugins: [
     vue(),
     vueJsx(),

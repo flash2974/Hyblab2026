@@ -12,7 +12,7 @@ const restaurants = [
         date: "03/12/2025",
         hook: "A deux pas de la place Plumereau, on a testé Yumi Ramen",
         coupDeCoeur: true,
-        image: "/lanouvellerepublique/img/resto ramen.jpg",
+        image: "img/resto ramen.jpg",
         article: {
             title: "A deux pas de la place Plumereau, on a testé Yumi Ramen",
             catch_phrase:
@@ -34,7 +34,7 @@ const restaurants = [
             ],
             images: [
                 {
-                    content: "/lanouvellerepublique/img/resto ramen.jpg",
+                    content: "img/resto ramen.jpg",
                     description: "Sur place ou à emporter, les amateurs de ramen ont le choix.",
                     auteur: "© (Photo tmv, Aurélien Germain)",
                 },
@@ -62,7 +62,7 @@ const restaurants = [
         date: "03/12/2025",
         hook: "Street food japonaise : on a testé Nobi Nobi",
         coupDeCoeur: false,
-        image: "/lanouvellerepublique/img/resto nobi nobi.jpg",
+        image: "img/resto nobi nobi.jpg",
         article: {
             title: "Street food japonaise : on a testé Nobi Nobi",
             catch_phrase:
@@ -84,7 +84,7 @@ const restaurants = [
             ],
             images: [
                 {
-                    content: "/lanouvellerepublique/img/resto nobi nobi.jpg",
+                    content: "img/resto nobi nobi.jpg",
                     description:
                         "Street japonaise au menu de Nobi Nobi, installé rue Nationale à Tours.",
                     auteur: "© (Photo tmv, Aurélien Germain)",
@@ -113,7 +113,7 @@ const restaurants = [
         date: "03/12/2025",
         hook: "Rue de la Rôtisserie, on a testé le restaurant Miettes",
         coupDeCoeur: false,
-        image: "/lanouvellerepublique/img/resto miettes.jpg",
+        image: "img/resto miettes.jpg",
         article: {
             title: "Rue de la Rôtisserie, on a testé le restaurant Miettes",
             catch_phrase:
@@ -135,7 +135,7 @@ const restaurants = [
             ],
             images: [
                 {
-                    content: "/lanouvellerepublique/img/resto miettes.jpg",
+                    content: "img/resto miettes.jpg",
                     description:
                         "Paul, aux fourneaux, amène une touche d'originalité qui réveille gentiment les papilles.",
                     auteur: "© (Photo tmv, Aurélien Germain)",
@@ -164,7 +164,7 @@ const restaurants = [
         date: "03/12/2025",
         hook: "Crêpes sucrées et galettes salées : on a testé Le Chalet",
         coupDeCoeur: false,
-        image: "/lanouvellerepublique/img/resto le chalet.jpg",
+        image: "img/resto le chalet.jpg",
         article: {
             title: "Crêpes sucrées et galettes salées : on a testé Le Chalet",
             catch_phrase:
@@ -184,7 +184,7 @@ const restaurants = [
                         "À la carte, on retrouve bien sûr la galette au sarrasin classique, avec jambon, œuf et emmental, ou sa variante à base de poulet. Mais on peut opter pour « la préférée des marins » avec saumon, emmental, feuille d'épinard, feta ; la chèvre-miel ; « la plus gourmande » avec de la saucisse ou encore celle du jour suivant l'humeur du chef et une option veggie à base d'œuf, oignon confit, emmental, salade.\n\nDe notre côté, c'est une story du compte Instagram du restaurant qui nous a poussés à tester la galette avec bœuf, cheddar, confit d'oignon et salade. Et qu'on se le dise, non seulement c'est bon, mais c'est aussi gourmand et généreux. Niveau garniture, il y a de quoi se remplir l'estomac ! La galette est bien croustillante et on a adoré cette grosse dose de cheddar, notre péché mignon.\n\nQu'on se rassure, les crêpes sucrées sont également au rendez-vous et sous différentes formes : nature, beurre, sucre ou confiture, Nutella, miel et caramel salé. De quoi contenter normalement tout le monde. Quant à nous, après ce test réussi, on s'est juré d'y retourner, car il y a une petite dernière qui nous fait de l'œil la galette jambon, emmental et truffe. Notre deuxième péché mignon.",
                     images: [
                         {
-                            content: "/lanouvellerepublique/img/resto le chalet (2).jpg",
+                            content: "img/resto le chalet (2).jpg",
                             description:
                                 "À TMV, on a opté pour la galette bœuf, confit d'oignons et cheddar.",
                             auteur: "© (Photo tmv, Aurélien Germain)",
@@ -194,7 +194,7 @@ const restaurants = [
             ],
             images: [
                 {
-                    content: "/lanouvellerepublique/img/resto le chalet.jpg",
+                            content: "img/resto le chalet.jpg",
                     description:
                         "Aucun souci si l'on veut manger en marchant, les galettes sont servies dans des cornets pratiques.",
                     auteur: "© (Photo tmv, Aurélien Germain)",
@@ -223,7 +223,7 @@ const restaurants = [
         date: "03/12/2025",
         hook: "On a testé le Tours Bouillon",
         coupDeCoeur: false,
-        image: "/lanouvellerepublique/img/resto tours bouillon.jpg",
+        image: "img/resto tours bouillon.jpg",
         article: {
             title: "On a testé le Tours Bouillon",
             catch_phrase:
@@ -243,7 +243,7 @@ const restaurants = [
                         "Pour enchaîner, on a failli tenter le filet de lieu noir, avec riz basmati et sa fondue de poireaux, mais pour préparer au mieux notre winter body, on a plutôt opté pour… le burger à la raclette ! Un plat plus que généreux, avec une sacrée dose de fromage bien fondant. C'est copieux comme il faut, avec également une portion de salade et des pommes de terre grenailles pour accompagner. De quoi repartir du Tours Bouillon le ventre bien rempli !\n\nUne cuisine simple, mais efficace et authentique, faite avec amour. Un petit lieu tout doux dont on aurait tort de se priver.",
                     images: [
                         {
-                            content: "/lanouvellerepublique/img/resto tours bouillon (2).jpg",
+                            content: "img/resto tours bouillon (2).jpg",
                             description:
                                 "Parfois, on ne s'interdit pas de sortir des plats traditionnels français. Cette semaine, on a goûté aux gambas laquées et salade asiatique.",
                             auteur: "© (Photo tmv, Aurélien Germain)",
@@ -253,7 +253,7 @@ const restaurants = [
             ],
             images: [
                 {
-                    content: "/lanouvellerepublique/img/resto tours bouillon.jpg",
+                    content: "img/resto tours bouillon.jpg",
                     description:
                         "Pour préparer notre winter body ? Rien de tel qu'un burger à la raclette et ses pommes de terre grenaille.",
                     auteur: "© (Photo tmv, Aurélien Germain)",
@@ -282,7 +282,7 @@ const restaurants = [
         date: "06/01/2026",
         hook: "Cuisine gastronomique, travaillée et raffinée : on a testé Mensa et Potus",
         coupDeCoeur: false,
-        image: "/lanouvellerepublique/img/resto mensa et potus.jpg",
+        image: "img/resto mensa et potus.jpg",
         article: {
             title: "Cuisine gastronomique, travaillée et raffinée : on a testé Mensa et Potus",
             catch_phrase:
@@ -302,7 +302,7 @@ const restaurants = [
                         "Le chef a une sympathique attention en nous préparant, d'abord, un petit amuse-bouche, puis on passe aux choses sérieuses avec l'entrée : un œuf parfait qui porte bien son nom, reposant sur une délicieuse mousseline de patate douce aux noix. Servie dans une très jolie vaisselle – ce qui sera une constante tout au long du repas – cette mise en bouche fait déjà son effet !\n\nOn enchaîne avec le plat principal qu'on a littéralement dévoré jusqu'à la dernière miette (on aime rendre les assiettes propres…), un pulled pork au sirop d'érable, un vrai régal, avec une déclinaison de salsifis et sauce émulsionnée au curry rouge. Un éclat de saveurs, de bons produits, une cuisine maîtrisée et bien exécutée jusqu'au dessert, ce jour-là à base d'ananas, de glace et de mangue. Le tout, donc, pour une addition à 25 €, c'est ce qu'on appelle un parfait rapport qualité-prix. Ajoutez à ça un service impeccable, une équipe attentionnée et très bonne conseillère sur la carte des vins, c'est un sans-faute.\n\nReste désormais à retourner à Mensa et Potus pour essayer la partie bar à tapas qui nous fait de l'œil depuis des semaines : les croq morilles cheddar fumé et les croquetas à la pancetta nous appellent déjà…",
                     images: [
                         {
-                            content: "/lanouvellerepublique/img/resto mensa et potus (2).jpg",
+                            content: "img/resto mensa et potus (2).jpg",
                             description:
                                 "L'œuf parfait et sa mousseline de patate douce en guise d'entrée.",
                             auteur: "© (Photo tmv, Aurélien Germain)",
@@ -312,7 +312,7 @@ const restaurants = [
             ],
             images: [
                 {
-                    content: "/lanouvellerepublique/img/resto mensa et potus.jpg",
+                    content: "img/resto mensa et potus.jpg",
                     description:
                         "Une pause midi avec pulled pork au sirop d'érable et déclinaison de salsifis, on dit oui.Une pause midi avec pulled pork au sirop d'érable et déclinaison de salsifis, on dit oui.",
                     auteur: "© (Photo tmv, Aurélien Germain)",
@@ -341,7 +341,7 @@ const restaurants = [
         date: "03/12/2025",
         hook: "Du côté des Halles, on a testé L'Atelier crêpier artisan",
         coupDeCoeur: false,
-        image: "/lanouvellerepublique/img/resto artisan crepier.jpg",
+        image: "img/resto artisan crepier.jpg",
         article: {
             title: "Du côté des Halles, on a testé L'Atelier crêpier artisan",
             catch_phrase:
@@ -363,7 +363,7 @@ const restaurants = [
             ],
             images: [
                 {
-                    content: "/lanouvellerepublique/img/resto artisan crepier.jpg",
+                    content: "img/resto artisan crepier.jpg",
                     description:
                         "Galettes de sarrasin et crêpes sucrées se déclinent dans des versions raffinées et gourmandes.",
                     auteur: "© (Photo tmv, Aurélien Germain)",
@@ -392,7 +392,7 @@ const restaurants = [
         date: "03/12/2025",
         hook: "On a testé le Bistrok, resto atypique et original où tout est à vendre… « sauf le personnel » !",
         coupDeCoeur: false,
-        image: "/lanouvellerepublique/img/resto bistrok.jpg",
+        image: "img/resto bistrok.jpg",
         article: {
             title: "On a testé le Bistrok, resto atypique et original où tout est à vendre… « sauf le personnel » !",
             catch_phrase:
@@ -412,7 +412,7 @@ const restaurants = [
                         "Tout aussi atypique est la carte avec ses noms de plats. Au hasard ? « Docteur Octopus qui a vaincu Spidersalmon » (du poulpe avec crème citron, yuzu et wasabi), « Oh ! Bonne mère » (loup, épeautre et soupe de poisson), « Mange ça, c'est bon pour ta santé » (avec feta, sucrine, halloumi et roquette). De notre côté, on a choisi une proposition bien colorée : « Rainbow pasta ».\n\nOn a vraiment apprécié cette portion généreuse et gourmande de pâtes linguine bleues joliment assaisonnées avec de l'ail rose qui ajoute beaucoup de saveur et un aspect esthétique à l'assiette. Par-dessus, trône une bonne burrata, délicate et douce, avec son cœur bien crémeux. On a accompagné tout ça par un verre de vin produit par le restaurant lui-même qui possède des vignes dans le Sud (où est d'ailleurs née la franchise Le Bistrok), le tout assuré par un service au top et une équipe pro, chaleureuse et perfusée à la bonne humeur.\n\nLe Bistrok est donc une adresse à découvrir, un endroit qui sort de l'ordinaire, qui se vit aussi bien pour son concept que pour sa cuisine. Une belle découverte.",
                     images: [
                         {
-                            content: "/lanouvellerepublique/img/resto bistrok (2).jpg",
+                            content: "img/resto bistrok (2).jpg",
                             description:
                                 "Au Bistrok, on peut acheter le mobilier, les couverts ou encore les éléments de décoration.",
                             auteur: "© (Photo tmv, Aurélien Germain)",
@@ -422,7 +422,7 @@ const restaurants = [
             ],
             images: [
                 {
-                    content: "/lanouvellerepublique/img/resto bistrok.jpg",
+                    content: "img/resto bistrok.jpg",
                     description: "L'originalité dans l'assiette est au programme !",
                     auteur: "© (Photo tmv, Aurélien Germain)",
                 },
@@ -451,7 +451,7 @@ const restaurants = [
         date: "01/02/2026",
         hook: "Le combat des franchises poulet : notre test comparatif",
         coupDeCoeur: false,
-        image: "/lanouvellerepublique/img/resto franchises poulet.jpg",
+        image: "img/resto franchises poulet.jpg",
         article: {
             title: "Le combat des franchises poulet : notre test comparatif",
             catch_phrase:
@@ -466,7 +466,7 @@ const restaurants = [
                     images: [
                         {
                             content:
-                                "/lanouvellerepublique/img/resto franchises poulet crousty game devanture.jpg",
+                                "img/resto franchises poulet crousty game devanture.jpg",
                             description: "Ambiance gaming à Crousty Game.",
                             auteur: "© (Photo tmv, Aurélien Germain)",
                         },
@@ -480,7 +480,7 @@ const restaurants = [
                     images: [
                         {
                             content:
-                                "/lanouvellerepublique/img/resto franchises poulet pb poulet braisé devanture.jpg",
+                                "img/resto franchises poulet pb poulet braisé devanture.jpg",
                             description: "Décor rétro-moderne pour la franchise PB Poulet braisé.",
                             auteur: "© (Photo tmv, Aurélien Germain)",
                         },
@@ -494,13 +494,13 @@ const restaurants = [
                     images: [
                         {
                             content:
-                                "/lanouvellerepublique/img/resto franchises poulet crousty game plat.jpg",
+                                "img/resto franchises poulet crousty game plat.jpg",
                             description: "Le crousty gratiné de chez Crousty Game.",
                             auteur: "© (Photo tmv, Aurélien Germain)",
                         },
                         {
                             content:
-                                "/lanouvellerepublique/img/resto franchises poulet pb poulet braisé plat.jpg",
+                                "img/resto franchises poulet pb poulet braisé plat.jpg",
                             description: "Des ailes de poulet braisé, sauce verte et frites au cheddar façon PB Poulet braisé.",
                             auteur: "© (Photo tmv, Aurélien Germain)",
                         },
@@ -515,7 +515,7 @@ const restaurants = [
             ],
             images: [
                 {
-                    content: "/lanouvellerepublique/img/resto franchises poulet.jpg",
+                    content: "img/resto franchises poulet.jpg",
                     description:
                         "Les franchises à succès PB Poulet braisé et Crousty Game comptent des dizaines de restaurants en France. Elles ont ouvert à Tours fin 2025 et le jour de leur inauguration, il y avait beaucoup de monde et des files d'attente folles.",
                     auteur: "© (Photo tmv, Aurélien Germain)",
@@ -544,7 +544,7 @@ const restaurants = [
         date: "27/02/2026",
         hook: "Cuisine du terroir et saveurs caribéennes : on a testé le restaurant AP par Anglade Pierre",
         coupDeCoeur: false,
-        image: "/lanouvellerepublique/img/resto AP.jpg",
+        image: "img/resto AP.jpg",
         article: {
             title: "Cuisine du terroir et saveurs caribéennes : on a testé le restaurant AP par Anglade Pierre",
             catch_phrase:
@@ -564,13 +564,13 @@ const restaurants = [
                         "Sur le papier, c'est bien et dans l'assiette, eh bien… c'est très bien aussi ! Ce mardi, lors de notre passage, on a opté pour la formule du midi qui s'affiche à 30 €, ou 25 € pour entrée plat. Confortablement installés (la salle est vraiment belle, lumineuse ; le cadre bleu cosy et chaleureux), on déguste d'abord une petite mise en bouche du chef proposée dans une très jolie vaisselle, ce qui sera d'ailleurs une constante tout au long du repas.\n\nCôté entrée, on a savouré des ailerons de poulet au teriyaki posés sur un velouté de courge butternut. Une proposition qui s'écarte des racines créoles promises par la maison… mais celles-ci se retrouvent dans le plat qui suit. Un filet de daurade délicieux, rôti aux épices qui ajoutent beaucoup de saveur. La peau du poisson, croustillante comme il faut, apporte de la texture à l'ensemble, et le risotto tout doux finit de nous caler l'estomac !\n\nÀ la carte ou avec le menu autour des Caraïbes, on peut aussi se laisser tenter par le magret de canard et sa purée de topinambour à la vanille, le tataki de bœuf au couac (de la semoule de manioc) avec ail noir et gel de citron, ou encore des associations avec du guavaberry, un fruit important dans le cœur des Saint-Martinois. Histoire de profiter pleinement du voyage.\n\n☺ Le petit conseil de tmv : le soir, les inspirations caribéennes s'expriment davantage dans le menu « Voyage autour des Caraïbes ». Le menu Terroir, lui, met surtout à l'honneur les produits locaux. Quant aux végétariens, ils ne sont pas oubliés, un menu spécial leur est proposé. À vous de choisir !",
                     images: [
                         {
-                            content: "/lanouvellerepublique/img/resto AP (2).jpg",
+                            content: "img/resto AP (2).jpg",
                             description:
                                 "La petite attention ? Une mise en bouche proposée par le chef Anglade Pierre.",
                             auteur: "© (Photo tmv, Aurélien Germain)",
                         },
                         {
-                            content: "/lanouvellerepublique/img/resto AP (3).jpg",
+                            content: "img/resto AP (3).jpg",
                             description: "Une entrée qui fait du bien à l'estomac !",
                             auteur: "© (Photo tmv, Aurélien Germain)",
                         },
@@ -579,7 +579,7 @@ const restaurants = [
             ],
             images: [
                 {
-                    content: "/lanouvellerepublique/img/resto AP.jpg",
+                    content: "img/resto AP.jpg",
                     description:
                         "Le jour de notre passage, c'était filet de daurade rôti aux épices et risotto au menu du midi.",
                     auteur: "© (Photo tmv, Aurélien Germain)",

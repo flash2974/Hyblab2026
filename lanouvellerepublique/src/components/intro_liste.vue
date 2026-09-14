@@ -1,10 +1,12 @@
-<script setup></script>
+<script setup>
+const baseUrl = import.meta.env.BASE_URL
+</script>
 
 <template>
     <div class="intro-liste">
         <div class="intro-liste-titre">
             <p class="intro-liste-titre__text">Les restos</p>
-            <img class="intro-liste-titre__logo" src="/img/tmv.png" />
+            <img class="intro-liste-titre__logo" :src="`${baseUrl}img/tmv.png`" />
         </div>
         <div class="intro-liste-text">
             <p class="intro-liste-text__text">
@@ -19,7 +21,7 @@
             </p>
         </div>
         <div class="intro-liste-badge">
-            <img src="/img/badge-coeur-tmv.svg" />
+            <img :src="`${baseUrl}img/badge-coeur-tmv.svg`" />
         </div>
     </div>
 </template>
