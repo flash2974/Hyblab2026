@@ -194,7 +194,7 @@ const restaurants = [
             ],
             images: [
                 {
-                            content: "img/resto le chalet.jpg",
+                    content: "img/resto le chalet.jpg",
                     description:
                         "Aucun souci si l'on veut manger en marchant, les galettes sont servies dans des cornets pratiques.",
                     auteur: "© (Photo tmv, Aurélien Germain)",
@@ -465,8 +465,7 @@ const restaurants = [
                         "J'arrive à midi pile. Une dizaine de jeunes sont attablés et ont déjà englouti leur plat. « Parce que c'est trop bon et c'est blindé de sauce, ça te cale bien comme il faut », résume Enzo, 16 ans. C'est d'ailleurs la promesse de l'enseigne placardée sur la devanture : « Tu vas être calé »  \n\nCrousty Game carbure bien en vente à emporter ou en livraison. De fait, la salle est minuscule. Côté déco, on est dans l'ambiance gaming, des manettes de jeu vidéo en néon au mur, une typographie qui évoque les jeux old school, le tout dans des tons mauves.\n\nLa commande se fait sur des bornes tactiles… sauf pour moi ce jour-là. À la caisse, la sympathique et accueillante serveuse préfère la prendre en direct (Ai-je l'air vieux et ne pas savoir utiliser ces bornes du haut de ma moitié de trentaine ridée ? Mystère). Enzo me regarde. J'ai peur qu'il me lâche un « OK boomer ».",
                     images: [
                         {
-                            content:
-                                "img/resto franchises poulet crousty game devanture.jpg",
+                            content: "img/resto franchises poulet crousty game devanture.jpg",
                             description: "Ambiance gaming à Crousty Game.",
                             auteur: "© (Photo tmv, Aurélien Germain)",
                         },
@@ -479,8 +478,7 @@ const restaurants = [
                         "J'arrive à midi pile (bis) pour ne pas perturber mon estomac prêt à enchaîner son deuxième jour de poulet et de fast-food. L'établissement est nettement plus grand. L'ambiance est toute autre, cette fois la couleur verte prédomine (des plantes à l'entrée s'entremêlent aux grilles), mais on joue encore sur l'aspect néon. Aux murs, on peut lire que ''PB, ça vaut le (dé) Tours'' et que ''Quand t'as goûté, PB tu sais''.\n\nPour l'accueil, c'est du tout bon dès la porte franchie. Sourire, bienveillance. Ici aussi, la commande se fait sur bornes tactiles. Je zieute un peu tous les plats sur le menu déroulant (eh oui Enzo, je sais y faire héhé) et hop, le choix est fait. Y a plus qu'à !",
                     images: [
                         {
-                            content:
-                                "img/resto franchises poulet pb poulet braisé devanture.jpg",
+                            content: "img/resto franchises poulet pb poulet braisé devanture.jpg",
                             description: "Décor rétro-moderne pour la franchise PB Poulet braisé.",
                             auteur: "© (Photo tmv, Aurélien Germain)",
                         },
@@ -493,15 +491,14 @@ const restaurants = [
                         "Crousty Game : Youhou, un crousty raclette en édition limitée au menu ! Je commande. Mais quelques minutes plus tard, on m'annonce que ce n'est pas possible (#loupé1). Bon. J'opte finalement pour le gratiné : du poulet crousty avec du riz, des oignons, de la sauce et du fromage gratiné par-dessus.\n\nPB Poulet braisé : Youhou, une formule découverte au menu ! Idéal pour une première fois, je choisis donc ça. Mais on m'annonce que ce n'est pas possible (#loupé2). Ma vie est un éternel recommencement, pas grave. Je commande les wings, des ailes de poulet marinées et braisées, accompagnées d'une sauce et de frites au cheddar.",
                     images: [
                         {
-                            content:
-                                "img/resto franchises poulet crousty game plat.jpg",
+                            content: "img/resto franchises poulet crousty game plat.jpg",
                             description: "Le crousty gratiné de chez Crousty Game.",
                             auteur: "© (Photo tmv, Aurélien Germain)",
                         },
                         {
-                            content:
-                                "img/resto franchises poulet pb poulet braisé plat.jpg",
-                            description: "Des ailes de poulet braisé, sauce verte et frites au cheddar façon PB Poulet braisé.",
+                            content: "img/resto franchises poulet pb poulet braisé plat.jpg",
+                            description:
+                                "Des ailes de poulet braisé, sauce verte et frites au cheddar façon PB Poulet braisé.",
                             auteur: "© (Photo tmv, Aurélien Germain)",
                         },
                     ],
